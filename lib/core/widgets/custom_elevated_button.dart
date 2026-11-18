@@ -15,6 +15,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.textStyle,
     this.icon,
     this.leading,
+    this.width,
   }) : _outlined = false;
 
   /// White button with a stroke
@@ -25,6 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.textStyle,
     this.icon,
     this.leading,
+    this.width,
   }) : backgroundColor = AppColors.white,
        _outlined = true;
 
@@ -36,6 +38,7 @@ class CustomElevatedButton extends StatelessWidget {
     required this.onPressed,
     required Widget logo,
     this.textStyle,
+    this.width,
   }) : backgroundColor = AppColors.white,
        icon = null,
        leading = logo,
@@ -47,6 +50,7 @@ class CustomElevatedButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final IconData? icon;
   final Widget? leading;
+  final double? width;
   final bool _outlined;
 
   @override
