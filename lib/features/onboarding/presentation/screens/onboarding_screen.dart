@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mkanak/core/theming/app_color.dart';
 import 'package:mkanak/features/onboarding/presentation/screens/onboarding1_screen.dart';
+import 'package:mkanak/features/onboarding/presentation/screens/onboarding2_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const new({super.key});
@@ -20,13 +21,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     });
   }
 
-  void _onNext() async {
-    if (currentIndex < 2) {}
+  void _onBack() {
+    pageController.previousPage(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
   }
 
-  void _onSkip() {
-    // Navigate on Login Screen.
+  void _onNext() async {
+    if (currentIndex < 2) {
+      currentIndex++;
+      pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
   }
+
+  void _onSkip() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +47,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         children: [
           Expanded(
             child: PageView(
+              controller: pageController,
               onPageChanged: (value) {
-                //current index == value we will do it later
+                setState(() {
+                  currentIndex = value;
+                });
               },
               //Need to Add PageController =>>> //controller:
               children: [
@@ -44,6 +59,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   currentIndex: currentIndex,
                   onSkip: _onSkip,
                   onNext: _onNext,
+                ),
+                Onboarding2Screen(
+                  currentIndex: currentIndex,
+                  onSkip: _onSkip,
+                  onNext: _onNext,
+                  onBack: _onBack,
                 ),
               ],
             ),
