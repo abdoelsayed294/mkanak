@@ -43,11 +43,17 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/delivery.svg
   String get delivery => 'assets/svgs/delivery.svg';
 
+  /// File path: assets/svgs/home_service.svg
+  String get homeService => 'assets/svgs/home_service.svg';
+
+  /// File path: assets/svgs/market.svg
+  String get market => 'assets/svgs/market.svg';
+
   /// File path: assets/svgs/verified.svg
   String get verified => 'assets/svgs/verified.svg';
 
   /// List of all assets
-  List<String> get values => [cash, delivery, verified];
+  List<String> get values => [cash, delivery, homeService, market, verified];
 }
 
 abstract final class Assets {

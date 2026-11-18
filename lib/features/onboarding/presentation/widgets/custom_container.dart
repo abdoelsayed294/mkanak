@@ -8,9 +8,16 @@ class CustomContainer extends StatelessWidget {
   final Widget icon;
   final String featureName;
   final String featureDescription;
-
+  final double? width;
+  final double? height;
+  final double? radius;
+  final Color? backGroundColor;
   const CustomContainer({
     super.key,
+    this.width,
+    this.height,
+    this.backGroundColor,
+    this.radius,
     required this.icon,
     required this.featureName,
     required this.featureDescription,
@@ -19,7 +26,7 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(minHeight: 94.h),
+      constraints: BoxConstraints(minHeight: 93.h),
       padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: AppColors.white,
@@ -37,9 +44,13 @@ class CustomContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 20.w,
-            height: 20.h,
+          Container(
+            width: width ?? 32.w,
+            height: height ?? 32.h,
+            decoration: BoxDecoration(
+              color: backGroundColor ?? AppColors.white,
+              borderRadius: BorderRadiusGeometry.circular(radius ?? 100),
+            ),
             child: Center(child: icon),
           ),
           verticalSpace(6),
@@ -53,7 +64,7 @@ class CustomContainer extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Text(
               featureDescription,
-              maxLines: 1,
+              maxLines: 2,
               textAlign: TextAlign.center,
               style: TextStyles.font11BlackRegular(context),
             ),
