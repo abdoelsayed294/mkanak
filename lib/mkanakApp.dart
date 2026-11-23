@@ -27,7 +27,7 @@ class MkanakApp extends StatelessWidget {
         ),
 
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.createNewPasswordScreen,
+        initialRoute: Routes.homeScreen,
       ),
     );
   }

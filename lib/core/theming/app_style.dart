@@ -53,6 +53,12 @@ class TextStyles {
     color: AppColors.black,
     height: 1,
   );
+  static TextStyle font11BrightRedMid(BuildContext context) => TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: AppColors.brightRed,
+    height: 1,
+  );
   static TextStyle font20BlackMid(BuildContext context) => TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.medium,

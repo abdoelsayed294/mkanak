@@ -24,5 +24,7 @@ class AppColors {
   static const Color blue = Color(0xFF2375D8); 
   static const Color rRed = Color(0xFFBA1A1A); 
   static const Color bBlue = Color(0xFFD6E3FF); 
-  static const Color newColor = Color(0xFFEDECEC); 
+  static const Color newColor = Color(0xFFEDECEC);
+  static const Color lightLavender = Color(0xFFEAEDFF);
+  static const Color brightRed = Color(0xFFFF383C);
 }
