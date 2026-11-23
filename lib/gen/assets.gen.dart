@@ -14,6 +14,12 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/hessein.png
+  AssetGenImage get hessein => const AssetGenImage('assets/images/hessein.png');
+
+  /// File path: assets/images/mkanak.png
+  AssetGenImage get mkanak => const AssetGenImage('assets/images/mkanak.png');
+
   /// File path: assets/images/onboarding_image1.png
   AssetGenImage get onboardingImage1 =>
       const AssetGenImage('assets/images/onboarding_image1.png');
@@ -28,6 +34,8 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    hessein,
+    mkanak,
     onboardingImage1,
     onboardingImage2,
     onboardingImage3,
@@ -43,11 +51,47 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/delivery.svg
   String get delivery => 'assets/svgs/delivery.svg';
 
+  /// File path: assets/svgs/drawer.svg
+  String get drawer => 'assets/svgs/drawer.svg';
+
+  /// File path: assets/svgs/help.svg
+  String get help => 'assets/svgs/help.svg';
+
+  /// File path: assets/svgs/history.svg
+  String get history => 'assets/svgs/history.svg';
+
+  /// File path: assets/svgs/home.svg
+  String get home => 'assets/svgs/home.svg';
+
+  /// File path: assets/svgs/logout.svg
+  String get logout => 'assets/svgs/logout.svg';
+
+  /// File path: assets/svgs/mkanak.svg
+  String get mkanak => 'assets/svgs/mkanak.svg';
+
+  /// File path: assets/svgs/notification.svg
+  String get notification => 'assets/svgs/notification.svg';
+
+  /// File path: assets/svgs/setting.svg
+  String get setting => 'assets/svgs/setting.svg';
+
   /// File path: assets/svgs/verified.svg
   String get verified => 'assets/svgs/verified.svg';
 
   /// List of all assets
-  List<String> get values => [cash, delivery, verified];
+  List<String> get values => [
+    cash,
+    delivery,
+    drawer,
+    help,
+    history,
+    home,
+    logout,
+    mkanak,
+    notification,
+    setting,
+    verified,
+  ];
 }
 
 abstract final class Assets {
