@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mkanak/core/theming/app_color.dart';
 import 'package:mkanak/features/onboarding/presentation/screens/onboarding1_screen.dart';
 import 'package:mkanak/features/onboarding/presentation/screens/onboarding2_screen.dart';
+import 'package:mkanak/features/onboarding/presentation/screens/onboarding3_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const new({super.key});
@@ -21,6 +22,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     });
   }
 
+  void _onGetStarted() {
+    //Navigate to Login Screen.
+  }
   void _onBack() {
     pageController.previousPage(
       duration: const Duration(milliseconds: 300),
@@ -47,6 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         children: [
           Expanded(
             child: PageView(
+              physics: NeverScrollableScrollPhysics(),
               controller: pageController,
               onPageChanged: (value) {
                 setState(() {
@@ -65,6 +70,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onSkip: _onSkip,
                   onNext: _onNext,
                   onBack: _onBack,
+                ),
+                Onboarding3Screen(
+                  currentIndex: currentIndex,
+                  onGetStarted: _onGetStarted,
                 ),
               ],
             ),

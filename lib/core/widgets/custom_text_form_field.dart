@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mkanak/core/theming/app_color.dart';
+import 'package:mkanak/core/theming/app_style.dart';
 
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
@@ -46,7 +47,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   late bool _obscure = widget.isPassword;
 
   OutlineInputBorder _border(Color color) => OutlineInputBorder(
-    borderRadius: BorderRadius.circular(12.r),
+    borderRadius: BorderRadius.circular(14.r),
     borderSide: BorderSide(color: color, width: 1),
   );
 
@@ -64,7 +65,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         filled: true,
         fillColor: widget.filledColor,
         hintText: widget.hintText,
-        hintStyle: widget.hintStyle,
+        hintStyle: widget.hintStyle ?? TextStyles.font12GrayMid(context),
         label: widget.label,
         labelStyle: widget.labelStyle,
         prefixIcon: widget.prefixIcon,
@@ -73,6 +74,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 onPressed: () => setState(() => _obscure = !_obscure),
                 icon: Icon(
                   _obscure ? Icons.visibility_off : Icons.visibility,
+                  color: AppColors.gray,
                 ),
               )
             : widget.suffixIcon,

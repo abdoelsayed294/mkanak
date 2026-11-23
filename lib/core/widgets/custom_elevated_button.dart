@@ -6,6 +6,7 @@ import 'package:mkanak/core/theming/app_color.dart';
 import 'package:mkanak/core/theming/app_style.dart';
 
 class CustomElevatedButton extends StatelessWidget {
+  /// Default filled button (unchanged).
   const CustomElevatedButton({
     super.key,
     required this.text,
@@ -13,14 +14,45 @@ class CustomElevatedButton extends StatelessWidget {
     this.backgroundColor,
     this.textStyle,
     this.icon,
+    this.leading,
     this.width,
-  });
+  }) : _outlined = false;
+
+  /// White button with a stroke
+  const CustomElevatedButton.outlined({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    this.textStyle,
+    this.icon,
+    this.leading,
+    this.width,
+  }) : backgroundColor = AppColors.white,
+       _outlined = true;
+
+  /// "Sign in with platform"
+
+  const CustomElevatedButton.platform({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    required Widget logo,
+    this.textStyle,
+    this.width,
+  }) : backgroundColor = AppColors.white,
+       icon = null,
+       leading = logo,
+       _outlined = true;
+
   final String text;
   final Color? backgroundColor;
   final TextStyle? textStyle;
   final VoidCallback? onPressed;
   final IconData? icon;
+  final Widget? leading;
   final double? width;
+  final bool _outlined;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -32,16 +64,24 @@ class CustomElevatedButton extends StatelessWidget {
           elevation: 0,
           backgroundColor: backgroundColor ?? AppColors.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(14.r),
+            side: _outlined
+                ? const BorderSide(color: AppColors.stroke)
+                : BorderSide.none,
           ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            if (leading != null) ...[leading!, horizontalSpace(8)],
             AutoSizeText(
               text,
               maxLines: 1,
-              style: textStyle ?? TextStyles.font16WhiteSemiBold(context),
+              style:
+                  textStyle ??
+                  (_outlined
+                      ? TextStyles.font16BlackSemiBold(context)
+                      : TextStyles.font16WhiteSemiBold(context)),
             ),
             horizontalSpace(6),
             if (icon != null) Icon(icon, color: AppColors.white, size: 18.sp),
