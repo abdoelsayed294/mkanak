@@ -1,3 +1,4 @@
+import 'package:device_preview_plus/device_preview_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +26,8 @@ class MkanakApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.bg,
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
-
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
         onGenerateRoute: appRouter.generateRoute,
         initialRoute: Routes.homeScreen,
       ),

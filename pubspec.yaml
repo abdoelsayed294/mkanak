@@ -44,6 +44,7 @@ dependencies:
   location: ^10.2.0
   bloc: ^9.2.1
   google_maps_flutter: ^2.19.0
+  device_preview_plus: ^2.9.9
 
 dev_dependencies:
   flutter_test:

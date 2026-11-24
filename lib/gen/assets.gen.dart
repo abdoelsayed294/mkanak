@@ -54,6 +54,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/drawer.svg
   String get drawer => 'assets/svgs/drawer.svg';
 
+  /// File path: assets/svgs/google.svg
+  String get google => 'assets/svgs/google.svg';
+
   /// File path: assets/svgs/help.svg
   String get help => 'assets/svgs/help.svg';
 
@@ -63,8 +66,14 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/home.svg
   String get home => 'assets/svgs/home.svg';
 
+  /// File path: assets/svgs/home_service.svg
+  String get homeService => 'assets/svgs/home_service.svg';
+
   /// File path: assets/svgs/logout.svg
   String get logout => 'assets/svgs/logout.svg';
+
+  /// File path: assets/svgs/market.svg
+  String get market => 'assets/svgs/market.svg';
 
   /// File path: assets/svgs/mkanak.svg
   String get mkanak => 'assets/svgs/mkanak.svg';
@@ -72,19 +81,11 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/notification.svg
   String get notification => 'assets/svgs/notification.svg';
 
-  /// File path: assets/svgs/setting.svg
-  String get setting => 'assets/svgs/setting.svg';
-  /// File path: assets/svgs/google.svg
-  String get google => 'assets/svgs/google.svg';
-
   /// File path: assets/svgs/phone.svg
   String get phone => 'assets/svgs/phone.svg';
-  
-  /// File path: assets/svgs/home_service.svg
-  String get homeService => 'assets/svgs/home_service.svg';
 
-  /// File path: assets/svgs/market.svg
-  String get market => 'assets/svgs/market.svg';
+  /// File path: assets/svgs/setting.svg
+  String get setting => 'assets/svgs/setting.svg';
 
   /// File path: assets/svgs/verified.svg
   String get verified => 'assets/svgs/verified.svg';
@@ -94,16 +95,19 @@ class $AssetsSvgsGen {
     cash,
     delivery,
     drawer,
+    google,
     help,
     history,
     home,
+    homeService,
     logout,
+    market,
     mkanak,
     notification,
+    phone,
     setting,
     verified,
   ];
-  List<String> get values => [cash, delivery, google, phone, homeService, market, verified];
 }
 
 abstract final class Assets {
